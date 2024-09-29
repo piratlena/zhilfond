@@ -1,0 +1,23 @@
+@import 'fonts';
+
+.container {
+  width: 1266px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: $Montserrat-SemiBold, sans-serif;
+  font-size: 32px;
+  line-height: 39.01px;
+  color: #E31F24;
+}
+
+.non-margins {
+  margin: 0;
+}
