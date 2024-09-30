@@ -25,7 +25,7 @@ const actions = {
         try {
             let response = null
             console.log(payload)
-            response = await axios.get(`https://jsonplaceholder.typicode.com/users?id=${payload.id}`)
+            response = await axios.get(`https://jsonplaceholder.typicode.com/users?${payload.query}`)
             console.log(response)
             if (response) {
                 context.commit('setEmployees', response.data)

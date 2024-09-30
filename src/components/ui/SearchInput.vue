@@ -1,7 +1,9 @@
 <template>
     <input
         :placeholder="placeholder"
+        :value="value"
         class="search-input"
+        @input="setValue($event.target.value)"
     />
 </template>
 
@@ -13,6 +15,18 @@ export default {
       type: String,
       default: '',
       required: true
+    }
+  },
+  emits: ['input'],
+  data() {
+    return {
+      value: ''
+    }
+  },
+  methods: {
+    setValue(data) {
+      this.value = data
+      this.$emit('input', this.value)
     }
   }
 }
@@ -29,6 +43,10 @@ export default {
   border: 1.5px solid $input-color;
   outline: none;
   box-sizing: border-box;
+  font-family: $Montserrat-Regular, sans-serif;
+  font-size: 14px;
+  color: $text-grey;
+  line-height: 17.07px;
 
   &:hover {
     box-shadow: 0 0 10px 0 #0000001A;
